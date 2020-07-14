@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <span class="navbar-brand mb-0 h1 header">Weather Dashboard</span>
+            </nav>
+        </header>
+
+        <div class="container dashboard">
+            <div class="row">
+                <div class="col-4">
+                    <!--search for a city-->
+                    <div class="contianer">
+                        <div class="row">
+                            <h5>Search for a City:</h5>
+                            <br>
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form> 
+                        </div>
+                        <div class="row">
+                            <!--recently searched city fast links-->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-8">
+                    <div class="row">
+                        <div class=" col jumbotron jumbotron-fluid">
+                            <div class="container">
+                             <!--current city weather-->
+                             <!--Current city & date-->
+                             <p class="temp">Temperature:</p>
+                             <p class="humid">Humidity:</p>
+                             <p class="wind">Wind Speed:</p>
+                             <p class="UV">UV Index:</p>
+                            </div>
+                          </div>
+                    </div>
+                    <!--5 day forecast-->
+                    <h5>5 day Forecast:</h5>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header"><!--date--></div>
+                                <div class="card-body">
+                                  <!--weather icon-->
+                                  <p class="card-text">Temp:</p>
+                                  <p class="card-text">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header"><!--date--></div>
+                                <div class="card-body">
+                                  <!--weather icon-->
+                                  <p class="card-text">Temp:</p>
+                                  <p class="card-text">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header"><!--date--></div>
+                                <div class="card-body">
+                                  <!--weather icon-->
+                                  <p class="card-text">Temp:</p>
+                                  <p class="card-text">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header"><!--date--></div>
+                                <div class="card-body">
+                                  <!--weather icon-->
+                                  <p class="card-text">Temp:</p>
+                                  <p class="card-text">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header"><!--date--></div>
+                                <div class="card-body">
+                                  <!--weather icon-->
+                                  <p class="card-text">Temp:</p>
+                                  <p class="card-text">Humidity:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--bootstrap & Jquery JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
