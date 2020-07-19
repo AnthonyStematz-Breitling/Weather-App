@@ -26,9 +26,13 @@ nav{
     padding:5px;
     text-align: center;
 }
-.card-text{
+.card-body{
     padding: 0px;
+    padding-left: 15px;
 }
-#fiveDay{
-    height:150px
+.card{
+    height:215px;
+}
+.fiveday{
+    padding:5px;
 }
