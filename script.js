@@ -2,64 +2,78 @@ var recentSearch =[]
 var city
 
 $("#search").click(function(event){
+    console.log("click", event)
     event.preventDefault()
     
     city = $("input").val().toLowerCase().trim()
+    if(city === ""){
+        alert("Must enter a City")
+        return
+    }
         if(recentSearch.length === 8){
             recentSearch.shift()
-            console.log(recentSearch)
+            
         }
         if(recentSearch.indexOf(city) === -1){
             recentSearch.push(city);
         }
         else if(recentSearch.indexOf(city) !== -1){
-            //recentSearch.splice(recentSearch.indexOf(city), 1)
-            //recentSearch.push(city)
+          reorganizeList(city)
         }
-            localStorage.setItem("RecentList", JSON.stringify(recentSearch))
+            
             getAPIday(city)
             recentSearchButtons()
+            localStorage.setItem("RecentList", JSON.stringify(recentSearch))
+            $("input").val("")
 })
+
+function reorganizeList(){
+    recentSearch.splice(recentSearch.indexOf(city), 1)
+    recentSearch.push(city)
+    recentSearchButtons()
+    localStorage.setItem("RecentList", JSON.stringify(recentSearch))
+}
+
 load()
 function load(){
     var firstCity = JSON.parse(localStorage.getItem("lastCity"))
     city = firstCity
     getAPIday(city)
-    renderRencentSearch()
-}
-
-function renderRencentSearch(){
+    
     var cityList = JSON.parse(localStorage.getItem("RecentList"))
     console.log(cityList)
     if(cityList === null){
-
+    
     }
     else{
     recentSearch = cityList
-    console.log(recentSearch)
     recentSearchButtons()
     }
 }
+
 function recentSearchButtons(){
     $("#searched").empty()
+    console.log($("#searched"))
     $.each(recentSearch, function(){
-        $('<button type="button" class="list-group-item cities list-group-item-action">').text(this).attr("id", this).prependTo($("#searched"))
+       $('<button type="button" class="list-group-item cities list-group-item-action">').text(this).attr("id", this).prependTo($("#searched"))
     })
+    console.log($("#searched"))
 
 }
 
-$(".cities").click(function(){
-    console.log("click")
-   // $(this).prependTo("#searched")
+$("#searched").on("click", "button", function(event){
+    event.preventDefault()
     city = $(this).text()
+    reorganizeList(city)
     getAPIday(city)
 })
 
 function getAPIday(city){
     $(".jumbotron").css("padding", "15px")
     localStorage.setItem("lastCity", JSON.stringify(city))
+
+
     var APIKey = "944757e03c4c560a64961cae626d9729";
-    
     var queryURL = "https:api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
     
     $.ajax({
@@ -78,7 +92,7 @@ function getAPIday(city){
     })
     
     .then(function(fiveDayForecast){
-        console.log(fiveDayForecast)
+        
         //current day
         var tempF = (fiveDayForecast.current.temp - 273.15) * 1.80 + 32;
         var UV = fiveDayForecast.current.uvi 
