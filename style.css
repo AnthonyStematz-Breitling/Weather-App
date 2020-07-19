@@ -1,27 +1,35 @@
 nav{
     text-align: center;
-    height:60px;
+    padding-top:10px;
+    height:85px;
 }
 .header{
     font-size:35px;
     padding:5px;
 }
+
 .dashboard{
     margin-left:150px;
     margin-right:150px;
-    margin-top:60px;
+    margin-top:35px;
 }
-#searched{
+
+/*history of searches*/
+#searchHistory{
     margin-top:15px;
     margin-right:15px;
 }
 .cities{
     text-transform:capitalize;
 }
+
+/*todays weather*/
 #today{
     text-transform:capitalize;
     padding:5px;
 }
+
+/* five day forecast*/
 .date{
     padding:5px;
     text-align: center;
