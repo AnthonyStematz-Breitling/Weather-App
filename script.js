@@ -7,8 +7,12 @@ var city
 load();
 function load(){
     var firstCity = JSON.parse(localStorage.getItem("lastCity"));
+    if(firstCity === null){
+    }
+    else{
     city = firstCity;
     getAPIday(city);
+    }
     
     var cityList = JSON.parse(localStorage.getItem("RecentList"));
     console.log(cityList);
