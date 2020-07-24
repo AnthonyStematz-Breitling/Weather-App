@@ -85,7 +85,7 @@ function getAPIday(city){
 
 
     var APIKey = "944757e03c4c560a64961cae626d9729";
-    var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
     
     $.ajax({
         url: queryURL,
