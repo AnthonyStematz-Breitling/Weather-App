@@ -85,7 +85,7 @@ function getAPIday(city){
 
 
     var APIKey = "944757e03c4c560a64961cae626d9729";
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
+    var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
     
     $.ajax({
         url: queryURL,
@@ -97,7 +97,7 @@ function getAPIday(city){
       var lat = currentWeather.coord.lat;
 
     $.ajax({
-        url :"https://api.openweathermap.org/data/2.5/onecall?" + "lat=" + lat + "&lon=" + long + "&exclude=hourly,minutely&appid=" + APIKey,
+        url :"api.openweathermap.org/data/2.5/onecall?" + "lat=" + lat + "&lon=" + long + "&exclude=hourly,minutely&appid=" + APIKey,
         method: "GET"
     })
     
