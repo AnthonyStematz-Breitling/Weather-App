@@ -97,7 +97,7 @@ function getAPIday(city){
       var lat = currentWeather.coord.lat;
 
     $.ajax({
-        url: "api.openweathermap.org/data/2.5/onecall?" + "lat=" + lat + "&lon=" + long + "&exclude=hourly,minutely&appid=" + APIKey,
+        url: "https://api.openweathermap.org/data/2.5/onecall?" + "lat=" + lat + "&lon=" + long + "&exclude=hourly,minutely&appid=" + APIKey,
         method: "GET"
     })
     
