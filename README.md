@@ -1,6 +1,6 @@
 # WeatherApp
 
-https://anthonystematz-breitling.github.io/WeatherApp/
+ https://anthonystematz-breitling.github.io/Weather-App/
 
 ## Description
 Front-end application using javascript to access a weather API.
