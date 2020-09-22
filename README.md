@@ -13,7 +13,7 @@ Front-end application using javascript to access a weather API.
  User can search for a city and the website will present current and future weather data, as well as update search history.
         
 ## Questions?
-* [AnthonyStematz-Breitling](https://github.com/AnthonyStematz-Breitling)
+* [AnthonyStembreit](https://github.com/AnthonyStembreit)
 * stembreit@gmail.com
         
  If you have any additional question feel free to message or email me.
