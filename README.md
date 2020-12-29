@@ -7,11 +7,21 @@ Front-end application using javascript to access a weather API.
 
 ## Table of Contents
  * [Usage](#usage)
+ * [Tech](#tech)
  * [Questions](#questions)
             
 ## Usage
  User can search for a city and the website will present current and future weather data, as well as update search history.
-        
+       
+## Tech
+* BootStrap
+* OpenWeatherMap API
+* Local-Storage
+* jQuery
+* MomentJS
+* HTML
+
+
 ## Questions?
 * [AnthonyStembreit](https://github.com/AnthonyStembreit)
 * stembreit@gmail.com
