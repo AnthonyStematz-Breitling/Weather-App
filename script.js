@@ -164,10 +164,10 @@ var media1000 = window.matchMedia("(max-width: 1000px)")
 media1000.addListener(mediaChange1)
 function mediaChange1(e){
     if(e.matches){
-        $("#navSpan").text("Main | History")
+        
     }
     else{
         //TODO see if there is an easier way to return element to prev state
-        $("#navSpan").text("Weather Dashboard") 
+         
     }
 }

@@ -1,4 +1,5 @@
 nav{
+    width:100%;
     text-align: center;
     padding-top:10px;
     height:85px;
@@ -41,4 +42,37 @@ nav{
     padding:5px;
 }
 @media screen and (max-width: 1000px){
+    #searchBar{
+       margin-top: 40px;
+       margin-bottom: 20px;
+    } 
+    #searchHistory{
+        display:none;
+    }
+    .dashboard{
+        margin:0px;
+    }
+    #today{
+        width: 100%;
+    }
+     #current{
+        width: 100%;
+    }
+    .card-body{
+        padding-left: unset;
+        padding:5px;
+    }
+    .row{
+        margin-left: unset;
+        margin-right: unset;
+    }
+    #forecast{
+        display: flex;
+        justify-content: center;
+    }
+    h5{
+        text-align: center;
+        font-size: 30px;
+    }
+  
 }
