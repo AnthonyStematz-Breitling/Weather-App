@@ -40,7 +40,7 @@ nav{
 .fiveday{
     padding:5px;
 }
-#historyShow{
+#historyToggle{
     display:none;
 }
 @media screen and (max-width: 1000px){
@@ -52,7 +52,7 @@ nav{
     #searchHistory{
         display:none;
     }
-    #historyShow{
+    #historyToggle{
         display: inline-flex;
     }
     form{

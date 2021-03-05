@@ -159,6 +159,19 @@ function getAPIday(city){
     });
 }
 
+$("#historyToggle").on("click", "button", function(event){
+    console.log("hit");
+    event.preventDefault();
+    // if($("#historyToggle").text === "Show History"){
+    //     $("#historyToggle").text("Hide History");
+    //     // $("#searchHistory").css("display", "flex");
+    // }
+    // else if($("#historyToggle").text === "Hide History"){
+    //     // $("#searchHistory").css("display", "none");
+    //     $("#historyToggle").text("Show History");
+    // }
+    
+})
 //media queries to change html for mobile mode
 // var media1000 = window.matchMedia("(max-width: 1000px)")
 // media1000.addListener(mediaChange1)
