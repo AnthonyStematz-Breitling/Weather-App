@@ -16,8 +16,7 @@ function load(){
     
     var cityList = JSON.parse(localStorage.getItem("RecentList"));
     console.log(cityList);
-    if(cityList === null){
-    
+    if(cityList === null){ 
     }
     else{
     recentSearch = cityList;
@@ -38,13 +37,13 @@ $("#search").on("click", function(event){
     if(recentSearch.length === 8){
         recentSearch.shift();        
     }
-        //and change the array accordingly
-        if(recentSearch.indexOf(city) === -1){
-            recentSearch.push(city);
-        }
-        else{
-            reorganizeButtons(city);
-        }
+    //and change the array accordingly
+    if(recentSearch.indexOf(city) === -1){
+        recentSearch.push(city);
+    }
+    else{
+        reorganizeButtons(city);
+    }
             
 getAPIday(city);
 searchHistoryButtons();
@@ -55,7 +54,6 @@ $("input").val("");
 //take the text from button pushed and run functions accordingly
 $("#searchHistory").on("click", "button", function(event){
     event.preventDefault();
-
     city = $(this).text();
     reorganizeButtons(city);
     getAPIday(city);
@@ -72,7 +70,6 @@ function reorganizeButtons(){
 //clears out the buttons and generates new buttons according to the current array
 function searchHistoryButtons(){
     $("#searchHistory").empty();
-
     $.each(recentSearch, function(){
        $('<button type="button" class="list-group-item cities list-group-item-action">').text(this).prependTo($("#searchHistory"));
     });
@@ -83,10 +80,9 @@ function getAPIday(city){
     $(".jumbotron").css("padding", "15px");
     localStorage.setItem("lastCity", JSON.stringify(city));
 
-
     var APIKey = "944757e03c4c560a64961cae626d9729";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid="+ APIKey;
-    
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -119,8 +115,6 @@ function getAPIday(city){
         $("<p class='wind'>").text("Wind Speed: " + fiveDayForecast.current.wind_speed + "mph").appendTo($("#today"));
         $("<p class='uv'>").text("UV Index: " + UV ).appendTo($("#today"));
         
-        
-        
         //change the css of the uv index based on severity
         if(UV<3){
             $(".uv").css("background-color", "green");
@@ -138,7 +132,6 @@ function getAPIday(city){
             $(".uv").css("background-color", "purple");
             $(".uv").css("color", "white");
         }
-
 
         //empty the card bodies holding the previous city's info
         $(".card-body").empty();
@@ -164,4 +157,17 @@ function getAPIday(city){
         });    
     });
     });
+}
+
+//media queries to change html for mobile mode
+var media1000 = window.matchMedia("(max-width: 1000px)")
+media1000.addListener(mediaChange1)
+function mediaChange1(e){
+    if(e.matches){
+        $("#navSpan").text("Main | History")
+    }
+    else{
+        //TODO see if there is an easier way to return element to prev state
+        $("#navSpan").text("Weather Dashboard") 
+    }
 }

@@ -7,13 +7,11 @@ nav{
     font-size:35px;
     padding:5px;
 }
-
 .dashboard{
     margin-left:150px;
     margin-right:150px;
     margin-top:35px;
 }
-
 /*history of searches*/
 #searchHistory{
     margin-top:15px;
@@ -22,13 +20,11 @@ nav{
 .cities{
     text-transform:capitalize;
 }
-
 /*todays weather*/
 #today{
     text-transform:capitalize;
     padding:5px;
 }
-
 /* five day forecast*/
 .date{
     padding:5px;
@@ -43,4 +39,6 @@ nav{
 }
 .fiveday{
     padding:5px;
+}
+@media screen and (max-width: 1000px){
 }
