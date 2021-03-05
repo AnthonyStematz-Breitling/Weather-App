@@ -102,7 +102,7 @@ function getAPIday(city){
         //declare variables for certain API information
         var tempF = (fiveDayForecast.current.temp - 273.15) * 1.80 + 32;
         var UV = fiveDayForecast.current.uvi ;
-        var icon ="openweathermap.org/img/wn/" + fiveDayForecast.current.weather[0].icon +"@2x.png";
+        var icon ="http://openweathermap.org/img/wn/" + fiveDayForecast.current.weather[0].icon +"@2x.png";
         //empty the divs holding the previous city's info
         $("#today").empty();
         $("#icon-today").empty();
