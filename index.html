@@ -24,16 +24,17 @@
 
         <div class="container dashboard">
             <div class="row">
-                <div class="large-col-4 small-col-12">
+                <div class="col-lg-4 col-sm-12">
                     <!--search for a city-->
                     <div class="contianer search">
-                        <div class="row" id="searchBar">
+                        <div class="row" id="searchSec">
 
                             <h5>Search for a City:</h5>
                             <br>
                             <form autocomplete="off" class="form-inline">
                                 <input  autocomplete="false" name ="hidden" id="input" class="form-control mr-sm-2" type="search" aria-label="Search">
                                 <button class="btn btn-outline-dark my-2 my-sm-0" id="search" type="submit">Search</button>
+                                <button class="btn btn-outline-dark my-2 my-sm-0" id="historyShow">Show History</button>
                             </form> 
 
                         </div>
@@ -45,7 +46,7 @@
 
                 
                 <!--current weather-->
-                <div class="large-col-8 small-col-12">
+                <div class="col-lg-8 col-sm-12">
                     <div class="row">
                         <div id="current" class="col jumbotron jumbotron-fluid">
                             <div class="container">
@@ -63,7 +64,7 @@
                     <!--5 day forecast-->
                     <h5>5 day Forecast:</h5>
                     <div class="row" id="forecast">
-                        <div class="large-col small-col-12 fiveday">
+                        <div class="col fiveday">
                             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                                 <div data-day=1 class="date card-header"><!--date--></div>
                                 <div class="card-body" data-day=1>
@@ -72,7 +73,7 @@
                             </div>
                         </div>
 
-                        <div class="large-col small-col-12 fiveday">
+                        <div class="col fiveday">
                             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                                 <div data-day=2 class=" date card-header"><!--date--></div>
                                 <div class="card-body" data-day=2>
@@ -81,7 +82,7 @@
                             </div>
                         </div>
 
-                        <div class="large-col small-col-12 fiveday">
+                        <div class="col fiveday">
                             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                                 <div data-day=3 class="date card-header"><!--date--></div>
                                 <div class="card-body" data-day=3>
@@ -90,7 +91,7 @@
                             </div>
                         </div>
 
-                        <div class="large-col small-col-12 fiveday">
+                        <div class="col fiveday">
                             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                                 <div data-day=4 class=" date card-header"><!--date--></div>
                                 <div class="card-body" data-day=4>
@@ -99,7 +100,7 @@
                             </div>
                         </div>
 
-                        <div class="large-col small-col-12 fiveday">
+                        <div class="col fiveday">
                             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                                 <div data-day=5 class="date card-header"><!--date--></div>
                                 <div class="card-body" data-day=5>
