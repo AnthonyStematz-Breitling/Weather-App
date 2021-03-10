@@ -25,7 +25,7 @@ function load() {
 }
 
 //compare searched city the the array of recently searched cities
-$("#search").on("click", function (event) {
+$("#search").on("click", async function (event) {
     event.preventDefault();
     city = $("input").val().toLowerCase().trim();
 
@@ -34,6 +34,13 @@ $("#search").on("click", function (event) {
         return
     }
 
+    await getAPIday(city);
+    $(document).ajaxError(function () {
+        alert("Something Went Wrong, Make Sure You Entered a Valid City")
+        $("input").val("");  
+    })
+
+    //TODO if ajaxError is hit prevent these things from happening
     if (recentSearch.length === 8) {
         recentSearch.shift();
     }
@@ -45,10 +52,10 @@ $("#search").on("click", function (event) {
         reorganizeButtons(city);
     }
 
-    getAPIday(city);
     searchHistoryButtons();
     localStorage.setItem("RecentList", JSON.stringify(recentSearch));
     $("input").val("");
+
 });
 
 //take the text from button pushed and run functions accordingly
@@ -82,6 +89,7 @@ function getAPIday(city) {
 
     var APIKey = "944757e03c4c560a64961cae626d9729";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+
 
     $.ajax({
         url: queryURL,
@@ -159,7 +167,8 @@ function getAPIday(city) {
     });
 }
 
-//TODO debug issue with onclick
+//button toggle for mobile
+//shows and hides history
 $("#historyToggle").on("click", function (e) {
     e.preventDefault();
     if ($("#historyToggle")[0].outerText === "Show History") {
@@ -172,16 +181,5 @@ $("#historyToggle").on("click", function (e) {
         $("#historyToggle").text("Show History");
     }
 })
-//media queries to change html for mobile mode
-// var media1000 = window.matchMedia("(max-width: 1000px)")
-// media1000.addListener(mediaChange1)
-// function mediaChange1(e){
-//     if(e.matches){
 
-//     }
-//     else{
-//         //TODO see if there is an easier way to return element to prev state
-
-//     }
-// }
 
