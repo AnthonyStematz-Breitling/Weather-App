@@ -51,10 +51,12 @@ nav{
     } 
     #searchHistory{
         display:none;
+        width:100%;
+        margin-bottom: 25px;
     }
-    /* #historyToggle{
+    #historyToggle{
         display: inline-flex;
-    } */
+    }
     form{
         justify-content: space-around;
     }
@@ -90,6 +92,7 @@ nav{
     .search{
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
   
 }
